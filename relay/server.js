@@ -176,7 +176,10 @@ function loadEnv() {
   }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] || "").href) {
+// Run when started directly, including under a process manager such as pm2, which starts this file
+// from its own wrapper and names it in pm_exec_path.
+const entry = process.env.pm_exec_path || process.argv[1];
+if (entry && pathToFileURL(entry).href === import.meta.url) {
   loadEnv();
   const argPort = process.argv.indexOf("--port");
   const port = Number(argPort > 0 ? process.argv[argPort + 1] : process.env.PORT) || 8788;
