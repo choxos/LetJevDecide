@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Let Jev Decide</title>
+    <meta name="description" content="Stuck on a yes or no decision? Ask Jev, an AI that answers with a probability, or flip a fair coin, as 22,511 people did in Steven Levitt's coin toss study." />
+    <meta property="og:title" content="Let Jev Decide" />
+    <meta property="og:description" content="Ask a yes or no question. Let Jev, or a coin, decide." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17181b" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="theme.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#question">Skip to the question</a>
+
+    <header class="topbar">
+      <a href="about.html">About</a>
+      <button type="button" id="open-history" aria-haspopup="dialog">History</button>
+      <button type="button" class="theme-btn" id="theme-toggle" aria-label="Dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+      </button>
+    </header>
+
+    <main class="home-main">
+      <h1 class="logo">Let <span class="jev">Jev</span> Decide<span class="coin-mark" aria-hidden="true"></span></h1>
+
+      <form class="search" id="ask" role="search" novalidate>
+        <div class="bar" id="bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.3 9.3a2.7 2.7 0 1 1 3.6 2.5c-.6.3-.9.8-.9 1.4v.6" /><circle cx="12" cy="17" r=".6" fill="currentColor" /></svg>
+          <label class="sr-only" for="question">Your yes or no question</label>
+          <input id="question" name="question" type="text" maxlength="200" autocomplete="off" enterkeyhint="go" placeholder="Ask a yes or no question" required />
+          <button type="button" class="icon-btn" id="clear" aria-label="Clear the question" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+          <button type="button" class="icon-btn" id="more" aria-expanded="false" aria-controls="details-box" aria-label="Tell Jev more">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg>
+          </button>
+        </div>
+        <div class="details" id="details-box" hidden>
+          <label class="sr-only" for="details">Details for Jev</label>
+          <textarea id="details" name="details" maxlength="1000" placeholder="Tell Jev more (optional): My boss yells every day, I have eight months of savings, and I just got an offer that pays 10% more."></textarea>
+          <p>Only Jev reads this. The coin does not care.</p>
+        </div>
+
+        <div class="examples" role="group" aria-label="Example questions">
+          <button type="button">Should I quit my job?</button>
+          <button type="button">Should I break up with my partner?</button>
+          <button type="button">Should I go back to school?</button>
+          <button type="button">Should I start my own business?</button>
+          <button type="button">Should I move to a new city?</button>
+          <button type="button">Should I get a tattoo?</button>
+          <button type="button">Should I ask for a raise?</button>
+          <button type="button">Should I adopt a dog?</button>
+        </div>
+
+        <div class="buttons">
+          <button class="btn" type="submit" value="jev">Ask Jev</button>
+          <button class="btn" type="submit" value="coin">Flip a Coin</button>
+        </div>
+
+        <div class="options">
+          <label><input type="checkbox" id="compare" /> Also flip a coin when asking Jev</label>
+          <label><input type="checkbox" id="three" /> Best two out of three</label>
+        </div>
+      </form>
+
+      <section class="result" id="result" aria-live="polite"></section>
+    </main>
+
+    <dialog id="history" aria-labelledby="history-title">
+      <div class="dialog-head">
+        <h2 id="history-title">History</h2>
+        <button type="button" class="icon-btn" id="close-history" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div id="log-body"></div>
+        <div class="dialog-foot">
+          <span>Saved only in this browser.</span>
+          <button class="btn" type="button" id="clear-log" hidden>Clear history</button>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="footer">
+      <span class="status"><span class="dot" id="dot"></span><span id="status-text">Checking Jev</span></span>
+      <nav aria-label="More">
+        <a href="about.html#study">The coin toss study</a>
+        <a href="about.html#how">How it works</a>
+        <a href="about.html#privacy">Privacy</a>
+        <a href="https://github.com/choxos/LetJevDecide">GitHub</a>
+      </nav>
+    </footer>
+  </body>
+</html>

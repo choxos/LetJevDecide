@@ -1,0 +1,16 @@
+{
+  "name": "let-jev-decide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ask a yes or no question and let Jev, or a fair coin, decide.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ahmad Sofi-Mahmudi",
+  "scripts": {
+    "start": "node relay/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

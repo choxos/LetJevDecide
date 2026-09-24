@@ -1,0 +1,9 @@
+# Local only
+documentation/
+
+# Secrets: the TypeSafe key lives here and nowhere else
+.env
+
+node_modules/
+.DS_Store
+.gstack/

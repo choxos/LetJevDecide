@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About · Let Jev Decide</title>
+    <meta name="description" content="How Let Jev Decide works, and the coin toss study behind it: Steven D. Levitt's Heads or Tails experiment with 22,511 real decisions." />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17181b" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="theme.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to the content</a>
+
+    <header class="topbar">
+      <a class="home" href="./">Let Jev Decide</a>
+      <a href="./">Ask a question</a>
+      <button type="button" class="theme-btn" id="theme-toggle" aria-label="Dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+      </button>
+    </header>
+
+    <main class="page" id="content">
+      <h1>About</h1>
+      <p class="lede">Ask a yes or no question, and let Jev or a fair coin make the call. The idea comes from a real experiment.</p>
+      <ul class="toc">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#study">The coin toss study</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#help">Getting help</a></li>
+      </ul>
+
+      <h2 id="how">How it works</h2>
+      <h3>Ask Jev</h3>
+      <p>
+        Jev is the first System One model from <a href="https://typesafe.ai">TypeSafe</a>. It does not write text or chat. It answers
+        typed questions with probabilities. Your question goes to Jev with four questions about it, all in one request:
+      </p>
+      <ul>
+        <li>Is it a decision you can settle with yes or no?</li>
+        <li>Should you do it? The probability of yes is Jev's answer: yes at 50% or more, no below.</li>
+        <li>How big a decision is it: trivial, minor, notable or major?</li>
+        <li>Does it hint at a crisis that nobody should decide with a coin or a computer?</li>
+      </ul>
+      <p>
+        Add details with the slider button in the question box and Jev weighs them too. When Jev is within ten points of 50/50, it
+        says it is on the fence.
+      </p>
+      <h3>Flip a coin</h3>
+      <p>
+        A fair flip made in your browser with its cryptographic random number generator. Heads means yes, make the change. Tails
+        means no, keep things as they are. As on the website in the study, you can flip once or go for best two out of three. Tick
+        “Also flip a coin” to ask Jev and flip at the same time and see whether they agree.
+      </p>
+      <p>
+        One trick worth knowing: notice how you feel the moment the answer appears. A flash of relief or disappointment often tells
+        you what you wanted all along.
+      </p>
+
+      <h2 id="study">The coin toss study</h2>
+      <p class="small">
+        Steven D. Levitt (2016). “Heads or Tails: The Impact of a Coin Toss on Major Life Decisions and Subsequent Happiness.” NBER
+        Working Paper 22487.
+      </p>
+      <p>
+        Do people make good choices when the stakes are high? Economists had little to say, because nobody can randomly assign people
+        to quit their jobs or leave their partners. Steven Levitt, the economist behind <i>Freakonomics</i>, found a way around that:
+        he asked people who were truly stuck on a decision to let a coin make it.
+      </p>
+
+      <div class="facts">
+        <div class="fact"><b>22,511</b><span>usable coin tosses</span></div>
+        <div class="fact"><b>165,000</b><span>visitors, roughly</span></div>
+        <div class="fact"><b>2 and 6</b><span>months until the follow up surveys</span></div>
+      </div>
+
+      <h3>How it worked</h3>
+      <p>
+        The website FreakonomicsExperiments.com opened on January 23, 2013. Visitors picked a decision from a menu, or wrote their
+        own, and answered a short survey about it, including how happy they were. Then a virtual coin was flipped. In most cases,
+        heads meant make the change and tails meant keep things as they are for at least two months. About 56% chose best two out of
+        three over a single flip. Two and six months later, people were asked what they did and how happy they were. About 30% also
+        named a friend or relative who was surveyed to check their answers.
+      </p>
+
+      <h3>The most popular questions</h3>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Coin tosses for the ten most common questions</caption>
+          <thead>
+            <tr><th scope="col">Question</th><th scope="col">Coin tosses</th><th scope="col">Counted as</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Should I quit my job?</td><td>2,186</td><td>Important</td></tr>
+            <tr><td>Should I break up?</td><td>1,686</td><td>Important</td></tr>
+            <tr><td>Should I splurge?</td><td>1,491</td><td>Less important</td></tr>
+            <tr><td>Should I go back to school?</td><td>1,203</td><td>Important</td></tr>
+            <tr><td>Should I go on a diet?</td><td>1,134</td><td>Less important</td></tr>
+            <tr><td>Should I break my bad habit?</td><td>984</td><td>Less important</td></tr>
+            <tr><td>Should I start my own business?</td><td>893</td><td>Important</td></tr>
+            <tr><td>Should I get a tattoo?</td><td>876</td><td>Less important</td></tr>
+            <tr><td>Should I move?</td><td>762</td><td>Important</td></tr>
+            <tr><td>Should I try online dating?</td><td>699</td><td>Less important</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">From Table 1 of the paper. Over 3,000 people also wrote questions of their own.</p>
+
+      <h3>Did people listen to a coin?</h3>
+      <p>
+        More than you might think. Two months after the toss, about 63% of people had done what the coin said, well above the 50%
+        you would expect if the coin made no difference. People who got heads were about 25 percentage points more likely to make
+        the change than people who got tails. The coin mattered most for small decisions, where over 67% followed it, but still
+        moved big ones such as quitting a job or breaking up, where about 56% did.
+      </p>
+
+      <h3>Were they happier?</h3>
+      <p>
+        Because the coin was random, the people it pushed toward a change were otherwise just like the people it did not. That makes
+        it possible to measure what making the change itself did to their happiness. For important decisions, making the change made
+        people happier: the effect was small and uncertain at two months but large at six months, with quitting a job and breaking
+        up standing out. For less important decisions, such as a diet or a splurge, changing made little difference either way.
+      </p>
+      <blockquote>
+        “The results of this paper suggest that people may be excessively cautious when facing life-changing choices.”
+        <footer>Steven D. Levitt, from the paper's abstract</footer>
+      </blockquote>
+
+      <h3>The fine print</h3>
+      <p>
+        Happiness was self reported, not everyone answered the follow up surveys, and people who visit a coin tossing website are not
+        a random slice of the population. Levitt calls the results “merely suggestive.” The study is about people who were truly on
+        the fence; it does not say that every change is a good one.
+      </p>
+
+      <h3>How this site is different</h3>
+      <p>
+        Let Jev Decide borrows the study's coin: heads means yes, and you can flip once or go for best two out of three. It does not
+        survey you or follow up. It also adds a second decider, Jev. Keep in mind that only the coin is random: Jev's answer depends
+        on what you tell it, so it cannot do what the coin did for the study, which was to split people into two groups that were
+        alike in every other way.
+      </p>
+
+      <h3>Cite the study</h3>
+      <div class="cite">
+        <p>
+          Levitt, Steven D. 2016. “Heads or Tails: The Impact of a Coin Toss on Major Life Decisions and Subsequent Happiness.” NBER
+          Working Paper 22487. National Bureau of Economic Research.
+          <a href="https://www.nber.org/papers/w22487">https://www.nber.org/papers/w22487</a>
+        </p>
+        <p>
+          Published as: Levitt, Steven D. 2021. “Heads or Tails: The Impact of a Coin Toss on Major Life Decisions and Subsequent
+          Happiness.” <i>The Review of Economic Studies</i> 88 (1): 378-405.
+          <a href="https://doi.org/10.1093/restud/rdaa016">https://doi.org/10.1093/restud/rdaa016</a>
+        </p>
+      </div>
+
+      <h2 id="privacy">Privacy</h2>
+      <p>
+        When you flip a coin, nothing leaves your browser. When you ask Jev, your question and any details go to the relay at
+        <a href="https://letjevdecide.xera.ac">letjevdecide.xera.ac</a> and on to TypeSafe for an answer. The relay keeps no copy of
+        them. Your history is saved only in this browser, and you can clear it at any time. There are no cookies, no analytics and no
+        trackers. The page loads its font from Google Fonts.
+      </p>
+
+      <h2 id="help">Getting help</h2>
+      <p>
+        Jev and the coin are for fun and for getting unstuck; they are not professional advice. If a question hints at danger to you
+        or someone else, neither will decide it. If you are thinking about suicide or about hurting yourself or someone else, please
+        reach out now. In the US, call or text <a href="tel:988">988</a> or chat at
+        <a href="https://988lifeline.org">988lifeline.org</a>. In an emergency, call 911. Outside the US, find a line near you at
+        <a href="https://findahelpline.com">findahelpline.com</a>.
+      </p>
+    </main>
+
+    <footer class="footer">
+      <span>Made by <a href="https://github.com/choxos">Ahmad Sofi-Mahmudi</a>. MIT License.</span>
+      <nav aria-label="More">
+        <a href="./">Ask a question</a>
+        <a href="https://github.com/choxos/LetJevDecide">GitHub</a>
+      </nav>
+    </footer>
+  </body>
+</html>
