@@ -350,11 +350,13 @@ function setupDecider() {
     if (open) details.focus();
   });
 
+  // An example question is asked right away, the same way as pressing Enter: Jev decides, and
+  // the coin too when "Also flip a coin" is ticked.
   for (const ex of form.querySelectorAll(".examples button")) {
     ex.addEventListener("click", () => {
       q.value = ex.textContent.trim();
       syncClear();
-      q.focus();
+      decide("jev");
     });
   }
 
@@ -397,6 +399,7 @@ function setupDecider() {
         reveal();
         const flips = tossCoins(three);
         const side = await runCoins(card, flips);
+        if (signal.aborted) return; // a newer question replaced this one mid flip
         coinVerdict(card, side, flips);
         log(question, "Coin", { coin: yesNo(side) });
         return;
@@ -414,6 +417,7 @@ function setupDecider() {
         cards.append(card);
         const flips = tossCoins(three);
         side = await runCoins(card, flips);
+        if (signal.aborted) return;
         coinVerdict(card, side, flips);
       }
 
